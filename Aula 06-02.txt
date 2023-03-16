@@ -1,0 +1,6 @@
+WEB SERVICE
+
+https://www.heroku.com/
+
+API - interface de programação acessando o banco de dados (interface sem acesso do usuário)
+
