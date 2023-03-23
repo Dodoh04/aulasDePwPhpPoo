@@ -12,16 +12,14 @@
         {
         if($this->saldo >= $quantia)
         {
-            parent::Retirar($quantia);
-
-            parent:: retirar($quantia * $cpnf);
-
+            parent::retirar($quantia);
         }   
         else
         {
             echo "<br> Retirrada não permitida ...</br>";
         }         
-        return true;
-        }
+            return true;
+        }         
+        
     }
 ?>
