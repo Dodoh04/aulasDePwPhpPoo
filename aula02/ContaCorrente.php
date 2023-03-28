@@ -1,5 +1,6 @@
 <?php
-    class ContaCorrente extends Conta{
+    class ContaCorrente extends Conta
+    {
         var $limite;
 
         function __construct($agencia, $codigo, $dataDeCriacao, $titular, $senha, $saldo, $limite)
@@ -8,21 +9,22 @@
             $this->limite = $limite;
         }
 
-        function Retirar($quantia)
+        function retirar($quantia)
         {
-        $cpnf = 0.5;
-        if(($this->saldo + $this->limite) >= $quantia)
-        {
-            parent::Retirar($quantia);
+            $cpmf = 0.05;
+            if(($this->saldo + $this->limite) >= $quantia)
+            {
+                parent::retirar($quantia);
 
-            parent:: retirar($quantia * $cpnf);
+                parent:: retirar($quantia * $cpmf);
 
-        }   
-        else
-        {
-            echo "<br> Retirrada não permitida ...</br>";
-        }         
-        return true;
+            }   
+            else
+            {
+                echo "<br> Retirrada não permitida ...</br>";
+                return false;
+            }         
+            return true;
         }
     }
 ?>

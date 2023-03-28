@@ -10,7 +10,7 @@
         var $salario;
 
         //aumenta a altura em centimetros
-        function crescer($centimetros > 0)
+        function crescer($centimetros = 0)
         {
             if($centimetros > 0){
                 $this->altura += $centimetros;
@@ -27,7 +27,7 @@
          function envelhecer ($anos)
          {
             if($anos > 0){
-                $this->idade = $anos;
+                $this->idade += $anos;
             }
          }
          //metodo contruct 
@@ -44,7 +44,7 @@
          //metodo contruct 
          function __destruct()
          {
-           echo "<br>Objeto {$this->nome} finalizado ... <br> "
+           echo "<br>Objeto {$this->nome} finalizado ... <br> ";
          }
             
         

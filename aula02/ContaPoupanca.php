@@ -4,11 +4,11 @@
 
         function __construct($agencia, $codigo, $dataDeCriacao, $titular, $senha, $saldo, $aniversario)
         {
-            parent::__construct($agencia, $codigo, $dataDeCriacao, $titular, $senha, $saldo, );
+            parent::__construct($agencia, $codigo, $dataDeCriacao, $titular, $senha, $saldo);
             $this->aniversario = $aniversario;
         }
 
-        function Retirar($quantia)
+        function retirar($quantia)
         {
         if($this->saldo >= $quantia)
         {
@@ -17,6 +17,7 @@
         else
         {
             echo "<br> Retirrada não permitida ...</br>";
+            return false;
         }         
             return true;
         }         
