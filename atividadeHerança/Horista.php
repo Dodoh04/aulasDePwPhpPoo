@@ -4,11 +4,13 @@
         var $precoHora = 8;
         var $horasTrabalhadas = 10;
 
-        function extra($bruto = 0)
+        function vencimento()
         {
-           $this->precoHora * $this->horasTrabalhadas = $bruto;
-           return $bruto;
+            return $this->precoHora * $this->horasTrabalhadas;
+            
+           
         }
         
     }
+    
  ?>

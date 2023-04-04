@@ -3,8 +3,8 @@
     {
         var $salario;
 
-        
-
-
+        function vencimento() { 
+            return $this->salario;
+        }
     }
  ?>
