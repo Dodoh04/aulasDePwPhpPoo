@@ -4,23 +4,25 @@
         var $nome;
         var $sobrenome;
         var $cpf;
+        var $salario;
+        var $quantiaIr;
+        var $quantiaInss;
 
-        function inss($quantia){
-            if($quantia <= 1302.00 ){
+        function inss(){
+            if($this->salario <= 1302.00 ){
                 $inss = 0.075;
-                $quantia -= $inss;
+                $inss * $this->salario = $this->quantiaInss;
              }
-             if($quantia <= 2571.29){
+             if($this->salario <= 2571.29){
                  $inss = 0.09;
-                $quantia -= $inss;
+                 $inss * $this->salario = $this->quantiaInss;
              }
-             if($quantia <= 3000.00){
+             if($this->salario <= 3000.00){
                  $inss = 0.12;
-                 $quantia -= $inss;
+                 $inss * $this->salario = $this->quantiaInss;
              }
              else{
-                 $inss = 263.33;
-                 $quantia -= $inss;
+                 $this->quantiaInss = 263.33;
              }
         }
         function ir($quantia){
@@ -50,14 +52,18 @@
 
         function Vencimento ()
         {
+            return (ir + inss) - salario;
             //tirar inss e/ou ir aqui
         }
 
-         function __construct($nome, $sobrenome, $cpf)
+         function __construct($nome, $sobrenome, $cpf, $salario, $quantiaIr, $quantiaInss)
         {
             $this->nome = $nome;
             $this->sobrenome = $sobrenome;
             $this->$cpf = $cpf;
+            $this->salario = $salario;
+            $this->$quantiaIr = $quantiaIr;
+            $this->$quantiaInss = $quantiaInss;
 
          }
          //metodo contruct 
